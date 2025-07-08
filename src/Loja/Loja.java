@@ -10,16 +10,10 @@ public class Loja {
     }
 
     public void realizarCompra(Carrinho carrinho) {
-        double valorTotalCarinho = 0.0;
-
-        //somando o valor dos produtos do carrinho
-        for (int i = 0; i < carrinho.getListaProdutos().size(); i++) {
-            valorTotalCarinho += carrinho.getListaProdutos().get(i)
-                    .getPreco();
-        }
+        ;
 
         //o mesmo que: metodoPagamento.realizarPagamento() == false
-        if (!metodoPagamento.realizarPagamento(valorTotalCarinho)) {
+        if (!metodoPagamento.realizarPagamento(carrinho.calcularTotal())) {
             System.out.println("Falha na compra!!!");
         } else {
             System.out.println("Itens comprados:");
